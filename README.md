@@ -1,2 +1,3 @@
-#react-concepts-and-features
+#spa-with-react-redux
+
 >In development phase
