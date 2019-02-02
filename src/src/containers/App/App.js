@@ -4,8 +4,10 @@ import './App.css';
 class App extends Component {
 	render() {
 		return (
-			<div className='container'>
-				<h1>React -  In progress</h1>
+			<div className='container-fluid'>
+				<div className='container'>
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
