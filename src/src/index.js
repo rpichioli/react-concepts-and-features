@@ -32,7 +32,7 @@ ReactDOM.render(
 					<Route exact path="/" component={Home} />
 					<Route exact path="/users" component={List} />
 					<Route exact path="/users/add" component={Form} />
-					<Route exact path="/users/edit:id" component={Form} />
+					<Route exact path="/users/edit/:id" component={Form} />
 				</Switch>
 			</App>
 		</Router>
