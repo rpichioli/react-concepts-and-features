@@ -29,10 +29,10 @@ ReactDOM.render(
 		<Router history={history}>
 			<App>
 				<Switch>
-					<Route exact to="/" component={Home} />
-					<Route exact to="/users/" component={List} />
-					<Route exact to="/users/add/" component={Form} />
-					<Route exact to="/users/edit:id" component={Form} />
+					<Route exact path="/" component={Home} />
+					<Route exact path="/users" component={List} />
+					<Route exact path="/users/add" component={Form} />
+					<Route exact path="/users/edit:id" component={Form} />
 				</Switch>
 			</App>
 		</Router>

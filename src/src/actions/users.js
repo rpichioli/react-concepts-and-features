@@ -16,7 +16,7 @@ export function removedUser(users) { return { type: REMOVED_USER, users }}
 /**
  * Fetch all users
  */
-export function fetchProjects() {
+export function fetchUsers() {
 	return (dispatch, getState) => dispatch(setUser(getMockedData()));
 }
 
