@@ -23,21 +23,21 @@ export function fetchProjects() {
 /**
  * Add new user
  */
-export function addProjects(user) {
+export function saveUser(user) {
 	return (dispatch, getState) => dispatch(addedUser(getMockedData()));
 }
 
 /**
  * Update usr by ID
  */
-export function updateProjects(user) {
+export function updateUser(user) {
 	return (dispatch, getState) => dispatch(updatedUser(getMockedData()));
 }
 
 /**
  * Remove user by ID
  */
-export function removeProjects(id) {
+export function deleteUser(id) {
 	return (dispatch, getState) => dispatch(removedUser(getMockedData()));
 }
 
@@ -56,10 +56,10 @@ export function fetchLastID() {
  */
 const getMockedData = () => {
 	return [
-		{id: 1, name: 'Filomena Silva'},
-		{id: 2, name: 'Eliseo Gonçalves'},
-		{id: 3, name: 'Marcos Roncador'},
-		{id: 4, name: 'Marcos Roncador'},
-		{id: 5, name: 'Marcos Roncador'}
+		{id: 1, name: 'Catharine', lastName: 'Owen'},
+		{id: 2, name: 'Eliseo', lastName: 'Santana Nuñes'},
+		{id: 3, name: 'Andrey', lastName: 'Klein'},
+		{id: 4, name: 'Muhhamed', lastName: 'Al-Ain'},
+		{id: 5, name: 'Anna', lastName: 'Beatriz Almeida'}
 	];
 }
