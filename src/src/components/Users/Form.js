@@ -73,6 +73,11 @@ class Form extends React.Component {
 		e.preventDefault();
 		let {errors, isValid} = this.validate();
 		if (!isValid) this.setState({errors});
+		else {
+			let { name, lastName } = this.state;
+			this.props.saveUser({ name, lastName, id: 0 });
+			this.props.history.push('/users');
+		}
 	}
 
 	render() {
