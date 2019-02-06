@@ -23,7 +23,7 @@ export function fetchUsers() {
 /**
  * Add new user
  */
-export function saveUser(user) {	
+export function saveUser(user) {
 	return (dispatch, getState) => dispatch(addedUser(user));
 }
 
