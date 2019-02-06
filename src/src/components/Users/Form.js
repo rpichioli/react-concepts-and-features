@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers, saveUser } from '../../actions/users';
+import { fetchUsers, saveUser, updateUser } from '../../actions/users';
 import classnames from 'classnames';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class Form extends React.Component {
 
@@ -19,17 +19,14 @@ class Form extends React.Component {
 	 * Call action to fetch data and fill state when component did mount
 	 */
 	componentDidMount = () => {
-		// Fill provisionally with all user information
-		this.props.fetchUsers();
-
 		// Set data into state if we have ID and found user by it in properties
-		// if (this.props.match.params.id && this.props.user) {
-		// 	this.setState({
-		// 		id: this.props.user.id,
-		// 		name: this.props.user.name,
-		// 		lastName: this.props.user.nastName,
-		// 	});
-		// }
+		if (this.props.match.params.id && this.props.user) {
+			this.setState({
+				id: this.props.user.id,
+				name: this.props.user.name,
+				lastName: this.props.user.lastName,
+			});
+		}
 	}
 
 	/**
@@ -50,7 +47,7 @@ class Form extends React.Component {
 	 * Form validation
 	 * @return {object} Object with errors existing and flag determining if is validation is OK or not
 	 */
-	validate = () => { console.log('validating');
+	validate = () => { 
 		let errors = {};
 		if (this.state.name === '') errors.name = 'The name field must be filled.';
 		if (this.state.lastName === '') errors.lastName = 'The last name field must be filled.';
@@ -74,8 +71,16 @@ class Form extends React.Component {
 		let {errors, isValid} = this.validate();
 		if (!isValid) this.setState({errors});
 		else {
-			let { name, lastName } = this.state;
-			this.props.saveUser({ name, lastName, id: 0 });
+			let { name, lastName, id } = this.state;
+			if (id === null) {
+				// Get the last ID to increment before dispatch action
+				let userMaxID = this.props.users.reduce((prev, current) => (prev.y > current.y) ? prev : current);
+				this.props.saveUser({ id: (userMaxID.id + 1), name, lastName });
+			} else {
+				// Dispatch the updated user itself
+				this.props.updateUser({ id, name, lastName });
+			}
+			// Redirect
 			this.props.history.push('/users');
 		}
 	}
@@ -118,10 +123,10 @@ class Form extends React.Component {
 // Form.defaultProps = {
 // 	id: 0
 // };
-//
-// Form.propTypes = {
-// 	id: PropTypes.number
-// }
+
+Form.propTypes = {
+	user: PropTypes.object.isRequired
+}
 
 /**
  * Map state into component properties properly
@@ -129,8 +134,9 @@ class Form extends React.Component {
  */
 const mapStateToProps = (state, props) => {
 	return {
-		user: state.users.filter(user => user.id === Number(props.match.params.id))[0] || {}
+		user: state.users.filter(user => user.id === Number(props.match.params.id))[0] || {},
+		users: state.users || []
 	}
 }
 
-export default connect(mapStateToProps, {fetchUsers, saveUser})(Form);
+export default connect(mapStateToProps, { fetchUsers, saveUser, updateUser })(Form);

@@ -1,15 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchUsers } from '../../actions/users';
 
 class List extends React.Component {
-
-	/**
-	 * Call action to fetch data and fill state when component did mount
-	 */
-	componentDidMount = () => {
-		//this.props.fetchUsers(); // Fetch data by action set into properties
-	}
 
 	render() {
 		let users = this.props.users; // Receive data mapped into properties
@@ -22,7 +16,7 @@ class List extends React.Component {
 					return (
 						<tr>
 							<td>{el.id}</td>
-							<td>{el.name}</td>
+							<td><NavLink to={`/users/edit/${el.id}`}>{el.name}</NavLink></td>
 							<td>{el.lastName}</td>
 						</tr>
 					);

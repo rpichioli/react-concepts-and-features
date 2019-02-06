@@ -11,12 +11,13 @@ let mockedState = [
 export default function projects(state = mockedState, action = {}) {
 	switch (action.type) {
 		case SET_USERS:
-			return state; //action.users;
+			return state;
 		case ADDED_USER:
 			return [...state, action.user];
 		case UPDATED_USER:
 			return state.map((item, i) => {
-				if (item.id === Number(action.user.id)) item.user = action.user;
+				if (item.id === Number(action.user.id)) item = action.user;
+				console.log(item)
 				return item;
 			});
 		case REMOVED_USER:
