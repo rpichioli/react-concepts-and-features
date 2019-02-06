@@ -11,17 +11,17 @@ class List extends React.Component {
 
 		// Populate grid if we have received data
 		if (users.length > 0) {
-			grid = (<table className='table'>
+			grid = (<table className='table'><tbody>
 				{users.map((el, i) => {
 					return (
-						<tr>
+						<tr key={i}>
 							<td>{el.id}</td>
 							<td><NavLink to={`/users/edit/${el.id}`}>{el.name}</NavLink></td>
 							<td>{el.lastName}</td>
 						</tr>
 					);
 				})}
-			</table>);
+			</tbody></table>);
 		}
 
 		return (

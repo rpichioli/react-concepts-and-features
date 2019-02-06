@@ -13,6 +13,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/rootReducer';
 //-------------- Local Storage ------------------------------------
 import { loadState, saveState } from './utils/localStorage';
+//-------------- Utils --------------------------------------------
+import throttle from 'lodash/throttle';
 //-------------- Bootstrap ----------------------------------------
 import 'bootstrap/dist/css/bootstrap.min.css';
 //-------------- Components ---------------------------------------
@@ -21,15 +23,21 @@ import Home from './components/Home/Home';
 import List from './components/Users/List';
 import Form from './components/Users/Form';
 
+const persistedState = loadState();
+
 // Browser history for routing configuration
 const history = createBrowserHistory();
 // Redux store -> Combined reducers and middleware for real-time monitoring
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+	rootReducer,
+	persistedState, 
+	composeWithDevTools(applyMiddleware(thunk))
+);
 
 /**
  * Intercepts each state update and persist it in localStorage
  */
-store.subscribe(() => {
+store.subscribe(throttle(() => {
 	// 1. Update all provided state - A global state handling aproach
 	// saveState(store.getState());
 	
@@ -37,7 +45,7 @@ store.subscribe(() => {
 	saveState({ 
 		users: store.getState().users 
 	});
-});
+}), 1000);
 
 ReactDOM.render(
 	<Provider store={store}>
