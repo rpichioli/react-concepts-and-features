@@ -8,7 +8,7 @@ The objective is to examplify how to mantain a stateful application manipulating
 
 Another point is the sync between Redux store (state mantained from any reducers) and the browser LocalStorage the way you can refresh any page and the data will not be lost.
 
-The objective is not to persist database, is to illustrate React-Redux interation. If you want to learn Redux-Database interation, I suggest you to see the repository [react-withnodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions.
+The objective is not to persist database, is to illustrate React-Redux interation. If you want to learn Redux-Database interation, I suggest you to see the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions.
 
 ### Requirements
 You must have **npm** in your OS by installing **NodeJS**, easily found at the official website.
