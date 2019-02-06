@@ -8,7 +8,7 @@ class List extends React.Component {
 	 * Call action to fetch data and fill state when component did mount
 	 */
 	componentDidMount = () => {
-		this.props.fetchUsers(); // Fetch data by action set into properties
+		//this.props.fetchUsers(); // Fetch data by action set into properties
 	}
 
 	render() {

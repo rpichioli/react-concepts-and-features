@@ -11,6 +11,8 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 //-------------- Redux --------------------------------------------
 import rootReducer from './reducers/rootReducer';
+//-------------- Local Storage ------------------------------------
+import { loadState, saveState } from './utils/localStorage';
 //-------------- Bootstrap ----------------------------------------
 import 'bootstrap/dist/css/bootstrap.min.css';
 //-------------- Components ---------------------------------------
@@ -23,6 +25,19 @@ import Form from './components/Users/Form';
 const history = createBrowserHistory();
 // Redux store -> Combined reducers and middleware for real-time monitoring
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+/**
+ * Intercepts each state update and persist it in localStorage
+ */
+store.subscribe(() => {
+	// 1. Update all provided state - A global state handling aproach
+	// saveState(store.getState());
+	
+	// 2. Update only specific state collections - Users state only in this case
+	saveState({ 
+		users: store.getState().users 
+	});
+});
 
 ReactDOM.render(
 	<Provider store={store}>

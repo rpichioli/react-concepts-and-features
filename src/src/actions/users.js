@@ -7,7 +7,7 @@ export const UPDATED_USER = 'UPDATED_USER';
 export const REMOVED_USER = 'REMOVED_USER';
 
 // ----- Actions -------------------------------------------------------
-export function setUser(users) { return { type: SET_USERS, users }}
+export function setUser() { return { type: SET_USERS }}
 export function addedUser(user) { return { type: ADDED_USER, user }}
 export function updatedUser(user) { return { type: UPDATED_USER, user }}
 export function removedUser(id) { return { type: REMOVED_USER, id }}
@@ -17,7 +17,7 @@ export function removedUser(id) { return { type: REMOVED_USER, id }}
  * Fetch all users
  */
 export function fetchUsers() {
-	return (dispatch, getState) => dispatch(setUser(getMockedData()));
+	return (dispatch, getState) => dispatch(setUser());
 }
 
 /**
@@ -42,7 +42,7 @@ export function deleteUser(id) {
 }
 
 /**
- * Get the last existing ID from mock - Just for tests
+ * Get the last existing ID from mock - Thinking about it
  */
 export function fetchLastID() {
 	let users = getMockedData();
@@ -52,7 +52,7 @@ export function fetchLastID() {
 // ----- Internal ------------------------------------------------------
 /**
  * Returns static mocked users
- * @return {array} Array of objects
+ * @return {array} Array of objects > Now on reducer initial state
  */
 const getMockedData = () => {
 	return [
