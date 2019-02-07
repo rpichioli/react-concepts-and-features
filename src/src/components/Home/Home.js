@@ -8,10 +8,11 @@ class Home extends React.Component {
 				<div className="card">
 					<div className="card-header">About the project</div>
 					<div className="card-body">
-						<p>Welcome, this is a SPA (single-page application) built with React + Redux.</p>
-						<p>The objective is to show how to mantain a stateful application manipulating data through Redux applying action and reducer concepts.</p>
-						<p>We will not persist database, this project is to illustrate React-Redux interation providing a working stateful application.</p>
-						<p>The sync between Redux store (state mantained from any reducers) and the browser LocalStorage the way you can refresh data will not be lost.</p>
+						<p>You can see here some React + Redux techniques like <b>dispatching actions</b>, <b>reducer handling state itself</b> and <b>store receiving combined reducers</b>.</p>
+						<p>We will <b>not persist data to database</b>, we will illustrate on the other hand the <b>synchronization between Redux store and browser LocalStorage</b>.</p>
+						<p>With store and localStorage working togheter you can refresh data and anything will be lost.</p>
+						<p>The reducer comes with a default mocked data mass.</p>
+						<p>To access all of this stuff click on <b>Users Management</b> in menu.</p>
 					</div>
 				</div>
 				

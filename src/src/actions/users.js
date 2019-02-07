@@ -40,26 +40,3 @@ export function updateUser(user) {
 export function deleteUser(id) {
 	return (dispatch, getState) => dispatch(removedUser(id));
 }
-
-/**
- * Get the last existing ID from mock - Thinking about it
- */
-export function fetchLastID() {
-	let users = getMockedData();
-	return users.reduce((prev, current) => (prev.y > current.y) ? prev : current);
-}
-
-// ----- Internal ------------------------------------------------------
-/**
- * Returns static mocked users
- * @return {array} Array of objects > Now on reducer initial state
- */
-const getMockedData = () => {
-	return [
-		{id: 1, name: 'Catharine', lastName: 'Owen'},
-		{id: 2, name: 'Eliseo', lastName: 'Santana Nuñes'},
-		{id: 3, name: 'Andrey', lastName: 'Klein'},
-		{id: 4, name: 'Muhhamed', lastName: 'Al-Ain'},
-		{id: 5, name: 'Anna', lastName: 'Beatriz Almeida'}
-	];
-}
