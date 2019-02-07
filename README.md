@@ -1,14 +1,20 @@
 # spa-with-react-redux
 
->In development phase
+You can see here some React + Redux techniques like dispatching actions, reducer handling state itself and store receiving combined reducers.
+We will not persist data to database, we will illustrate on the other hand the synchronization between Redux store and browser LocalStorage.
+With store and localStorage working togheter you can refresh data and anything will be lost.
+The reducer comes with a default mocked data mass.
+To access all of this stuff click on Users Management in menu.
 
-Welcome, this is a SPA (single-page application) built with React + Redux.
 
-The objective is to examplify how to mantain a stateful application manipulating data through Redux applying action and reducer concepts.
+Welcome, this is a React + Redux SPA (single-page application) project.
 
-Another point is the sync between Redux store (state mantained from any reducers) and the browser LocalStorage the way you can refresh any page and the data will not be lost.
+You can see here some React + Redux techniques like dispatching actions, reducer handling state itself and store receiving combined reducers.
 
-The objective is not to persist database, is to illustrate React-Redux interation. If you want to learn Redux-Database interation, I suggest you to see the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions.
+We will not persist data to database, we will illustrate on the other hand the synchronization between Redux store and browser LocalStorage. With store and localStorage working togheter you can refresh data and anything will be lost.
+
+### Suggestion
+If you want to learn Redux-Database interation, I suggest you to see my the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions and dispatched it to reducer.
 
 ### Requirements
 You must have **npm** in your OS by installing **NodeJS**, easily found at the official website.
