@@ -90,14 +90,6 @@ class Form extends React.Component {
 		return (
 			<div>
 				<h1>User registering</h1>
-				<p>TODO:</p>
-				<ul>
-					<li style={{textDecoration: 'line-through'}}>Layout</li>
-					<li style={{textDecoration: 'line-through'}}>Manage state and set form mode</li>
-					<li style={{textDecoration: 'line-through'}}>Lifecycle and fill if in edit mode</li>
-					<li style={{textDecoration: 'line-through'}}>Validate form</li>
-					<li style={{textDecoration: 'none'}}>Persist data to Redux through actions</li>
-				</ul>
 
 				<form method="POST" onSubmit={this.handleSubmit}>
 					<div className="form-group">
