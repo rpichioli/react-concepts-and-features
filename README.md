@@ -1,12 +1,5 @@
 # spa-with-react-redux
 
-You can see here some React + Redux techniques like dispatching actions, reducer handling state itself and store receiving combined reducers.
-We will not persist data to database, we will illustrate on the other hand the synchronization between Redux store and browser LocalStorage.
-With store and localStorage working togheter you can refresh data and anything will be lost.
-The reducer comes with a default mocked data mass.
-To access all of this stuff click on Users Management in menu.
-
-
 Welcome, this is a React + Redux SPA (single-page application) project.
 
 You can see here some React + Redux techniques like dispatching actions, reducer handling state itself and store receiving combined reducers.
