@@ -6,9 +6,6 @@ You can see here some React + Redux techniques like dispatching actions, reducer
 
 We will not persist data to database, we will illustrate on the other hand the synchronization between Redux store and browser LocalStorage. With store and localStorage working togheter you can refresh data and anything will be lost.
 
-### Suggestion
-If you want to go ahead in a more advanced application like a Redux-Database interation within React + NodeJS RESTful API with relational database in a complete scenario, I suggest you to see the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize). I used axios to request NodeJS API inside my actions scope and dispatched it to reducer that fills the store (Redux principles). The NodeJS Express API is using Sequelize ORM that manipulate relational database (MySQL) mapping tables and doing all the stuff that and ORM do naturally.
-
 ### Requirements
 You must have **npm** in your OS by installing **NodeJS**, easily found at the official website.
 
@@ -22,6 +19,9 @@ Now you need to install the npm dependencies using the command ```npm install```
 Finally you just must enter ```npm start``` to run the React application.
 
 That's all!
+
+### Suggestion
+If you want to go ahead in a more advanced application like a Redux-Database interation within React + NodeJS RESTful API with relational database in a complete scenario, I suggest you to see the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize). I used axios to request NodeJS API inside my actions scope and dispatched it to reducer that fills the store (Redux principles). The NodeJS Express API is using Sequelize ORM that manipulate relational database (MySQL) mapping tables and doing all the stuff that and ORM do naturally.
 
 ### Developed by
 Rodrigo Quiñones Pichioli, since Jan/2019
