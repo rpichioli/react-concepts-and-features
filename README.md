@@ -7,7 +7,7 @@ You can see here some React + Redux techniques like dispatching actions, reducer
 We will not persist data to database, we will illustrate on the other hand the synchronization between Redux store and browser LocalStorage. With store and localStorage working togheter you can refresh data and anything will be lost.
 
 ### Suggestion
-If you want to learn Redux-Database interation, I suggest you to see my the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions and dispatched it to reducer.
+If you want to learn Redux-Database interation, I suggest you to see the repository [react-with-nodejs-and-sequelize](https://github.com/rpichioli/react-with-nodejs-and-sequelize) after that - I used axios to request NodeJS API within actions and dispatched it to reducer.
 
 ### Requirements
 You must have **npm** in your OS by installing **NodeJS**, easily found at the official website.
